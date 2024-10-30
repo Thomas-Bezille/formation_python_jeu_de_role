@@ -9,6 +9,8 @@ life_enemy = 50
 
 potion_player = 3
 
+skip_next_round = False
+
 print("\n//////////----- JEU DE ROLE -----//////////")
 
 while life_player > 0 or life_enemy > 0:
@@ -21,3 +23,13 @@ while life_player > 0 or life_enemy > 0:
         life_enemy -= power
         print(f"Vous avez infligé {power} points de dégats à l'ennemi ⚔️")
         print(life_enemy)
+    
+    if action_player == POTION and potion_player > 0:
+        heal = random.randint(15, 20)
+        life_player += heal
+        potion_player -= 1
+        print(f"Vous avez récupérer {heal} points de vie ❤️ ({potion_player} restante(s))")
+        skip_next_round = True
+        print(life_player)
+    elif potion_player <= 0:
+        continue
