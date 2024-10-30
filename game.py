@@ -48,3 +48,10 @@ while True:
     print(f"Il vous reste {life_player} points de vie.")
     print(f"Il reste {life_enemy} points de vie à l'ennemi.")
     print("-" * 50)
+    
+    # End game conditions
+    if life_player <= 0:
+        sys.exit(f"Vos points de vie sont tombés à zéro. Vous avez perdu ce combat ! 💀 Il restait {life_enemy} points de vies à votre adversaire.")
+    
+    if life_enemy <= 0:
+        sys.exit(f"Les points de vie de votre adversaire sont tombés à zéro. Vous avez gagné ce combat ! 🏆 Il vous restait {life_player} points de vie.")
