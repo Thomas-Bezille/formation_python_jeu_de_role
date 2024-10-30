@@ -33,3 +33,8 @@ while life_player > 0 or life_enemy > 0:
         print(life_player)
     elif potion_player <= 0:
         continue
+    
+    # Enemy Attack (He can only attack, he has no potion)
+    power = random.randint(5, 15)
+    life_player -= power
+    print(f"L'ennemi vous a infligé {power} points de dégats ⚔️")
